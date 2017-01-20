@@ -1,0 +1,36 @@
+//
+//  Volume.m
+//  volumn
+//
+//  Created by macbook on 16/11/18.
+//  Copyright © 2016年 macbook. All rights reserved.
+//
+
+#import "Volume.h"
+
+@implementation Volume
+-(id) initWithMin:(int)a max:(int)b step:(int)c{
+    self =[super init];
+    if(self!= nil)
+    { val =min=a;
+        max=b;
+        step=c;
+    }
+    return self;
+}
+-(int)Value
+{
+    return val;
+}
+-(id)up{
+if((val+=step)>max)
+    val=max;
+    return self;
+}
+-(id)down{
+    if((val-=step)<min)
+        val=min;
+    return self;
+}
+
+@end
