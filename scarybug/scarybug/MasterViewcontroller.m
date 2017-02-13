@@ -19,6 +19,8 @@
 
 @property (weak) IBOutlet EDStarRating *bugRating;
 @property (weak) IBOutlet NSImageView *bugImageView;
+@property (weak) IBOutlet NSButton *deleteButton;
+@property (weak) IBOutlet NSButton *change;
 
 @end
 
@@ -53,7 +55,7 @@
     self.bugRating.maxRating = 5.0;
     self.bugRating.delegate = (id<EDStarRatingProtocol>) self;
     self.bugRating.horizontalMargin = 12;
-    self.bugRating.editable=YES;
+    self.bugRating.editable=NO;
     self.bugRating.displayMode=EDStarRatingDisplayFull;
     
     
@@ -94,6 +96,12 @@
     
     // Update info
     [self setDetailInfo:selectedDoc];
+    // Enable/Disable buttons based on selection
+    BOOL buttonsEnabled = (selectedDoc!=nil);
+    [self.deleteButton setEnabled:buttonsEnabled];
+    [self.change setEnabled:buttonsEnabled];
+    [self.bugRating setEditable:buttonsEnabled];
+    [self.bugTitleView setEnabled:buttonsEnabled];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
@@ -122,6 +130,7 @@
         [self.bugsTableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:self.bugsTableView.selectedRow] withAnimation:NSTableViewAnimationSlideRight];
         // Clear detail info
         [self setDetailInfo:nil];
+       
     }}
 - (IBAction)bugTitleDidandEdit:(id)sender {
     // 1. Get selected bug

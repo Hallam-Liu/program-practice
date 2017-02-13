@@ -12,6 +12,8 @@
                 <outlet property="bugTitleView" destination="4KR-6s-5aX" id="9eo-Dm-UMn"/>
                 <outlet property="bugsTableView" destination="KDM-ED-CQT" id="hCt-ki-BDF"/>
                 <outlet property="bugsTitleView" destination="4KR-6s-5aX" id="nwc-XG-vZe"/>
+                <outlet property="change" destination="hS4-Sw-8GJ" id="jMj-zj-qpg"/>
+                <outlet property="deleteButton" destination="H6d-Z7-GdT" id="LXb-NX-qmg"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -30,7 +32,7 @@
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" rowSizeStyle="automatic" viewBased="YES" id="KDM-ED-CQT">
                                 <rect key="frame" x="0.0" y="0.0" width="238" height="238"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -50,7 +52,7 @@
                                         <prototypeCellViews>
                                             <tableCellView id="xkT-8Z-eAV">
                                                 <rect key="frame" x="1" y="1" width="235" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eRf-Mo-6Kq">
                                                         <rect key="frame" x="3" y="9" width="27" height="23"/>
@@ -74,7 +76,7 @@
                                             </tableCellView>
                                             <tableCellView id="IsZ-rm-2NP">
                                                 <rect key="frame" x="1" y="35" width="235" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
@@ -107,7 +109,7 @@
                 </textField>
                 <textField verticalHuggingPriority="750" id="4KR-6s-5aX">
                     <rect key="frame" x="269" y="291" width="134" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ZWh-kH-CjI">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -128,16 +130,16 @@
                 </textField>
                 <customView id="zu9-tb-Rhb" customClass="EDStarRating">
                     <rect key="frame" x="269" y="164" width="305" height="98"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Pl8-PI-l9K">
                     <rect key="frame" x="269" y="29" width="214" height="111"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="7Y0-Lx-Sbg"/>
                 </imageView>
                 <button verticalHuggingPriority="750" id="TGD-2h-yfq">
                     <rect key="frame" x="20" y="63" width="27" height="28"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c4i-39-q3V">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -148,8 +150,8 @@
                 </button>
                 <button verticalHuggingPriority="750" id="H6d-Z7-GdT">
                     <rect key="frame" x="55" y="63" width="27" height="28"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nE-d1-2Cb">
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nE-d1-2Cb">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -159,8 +161,8 @@
                 </button>
                 <button verticalHuggingPriority="750" id="hS4-Sw-8GJ">
                     <rect key="frame" x="114" y="63" width="91" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="change" bezelStyle="rounded" alignment="center" borderStyle="border" userInterfaceLayoutDirection="rightToLeft" imageScaling="proportionallyDown" inset="2" id="Cuq-gG-ZFe">
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="push" title="change" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" userInterfaceLayoutDirection="rightToLeft" imageScaling="proportionallyDown" inset="2" id="Cuq-gG-ZFe">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system" size="15"/>
                     </buttonCell>
@@ -168,6 +170,13 @@
                         <action selector="change:" target="-2" id="DRt-V9-UcN"/>
                     </connections>
                 </button>
+                <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="xlC-2L-CnN">
+                    <rect key="frame" x="258" y="20" width="5" height="318"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
             </subviews>
             <point key="canvasLocation" x="62" y="273"/>
         </customView>
