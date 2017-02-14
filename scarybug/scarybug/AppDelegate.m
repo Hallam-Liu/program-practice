@@ -10,7 +10,8 @@
 #include "MasterViewcontroller.h"
 #import "ScaryBugDoc.h"
 @interface AppDelegate ()
-@property (nonatomic,strong) IBOutlet MasterViewcontroller *masterViewController;
+@property (nonatomic,strong) IBOutlet MasterViewcontroller *masterViewController;//向appdelegate声明view的存在
+//接下来进行实例化
 @property (weak) IBOutlet NSWindow *window;
 @end
 
@@ -29,15 +30,21 @@
     ScaryBugDoc *bug3 = [[ScaryBugDoc alloc] initWithTitle:@"Wolf Spider" rating:5 thumbImage:[NSImage imageNamed:@"wolfSpiderThumb.jpg"] fullImage:[NSImage imageNamed:@"wolfSpider.jpg"]];
     ScaryBugDoc *bug4 = [[ScaryBugDoc alloc] initWithTitle:@"Lady Bug" rating:1 thumbImage:[NSImage imageNamed:@"ladybugThumb.jpg"] fullImage:[NSImage imageNamed:@"ladybug.jpg"]];
     NSMutableArray *bugs = [NSMutableArray arrayWithObjects:bug1, bug2, bug3, bug4, nil];
-    
-    self.masterViewController.bugs = bugs;
-    // 2. Add the view controller to the Window's content view
+    //初始化数据
+    self.masterViewController.bugs = bugs;//将数据存入bugs字典中
+    // 2. Add the view controller to the Window's content view将view controller加入窗口内容
     [self.window.contentView addSubview:self.masterViewController.view];
     self.masterViewController.view.frame = ((NSView*)self.window.contentView).bounds;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+  
+   
 }
-
+- (void)windowWillClose:(NSNotification *)notification
+{
+   
+    [NSApp terminate:nil];
+}
 @end
